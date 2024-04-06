@@ -1,2 +1,2 @@
-# advent_of_code
-Solution for advent of coed challenges
+# Advent of code
+Solution for advent of coed challenges.
