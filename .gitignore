@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+solution
+
+# Python scripts
+*.py
