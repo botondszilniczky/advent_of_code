@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <algorithm>
+#include <regex>
 
 struct Present
 {
@@ -79,7 +80,19 @@ void solve2(std::vector<Present> presents)
 
 int main(int argc, char const *argv[])
 {
-    std::vector<Present> presents = readFile("input.txt");
+    std::string exePath = argv[0];
+    std::string inputPath;
+    std::regex fileReg("(.*[\\/\\\\]).*$");
+    std::smatch match;
+    if(std::regex_search(exePath, match, fileReg))
+    {
+        for(auto m : match)
+        {
+            std::cout << m << std::endl;
+            inputPath = m;
+        }
+    }
+    std::vector<Present> presents = readFile(inputPath + "input02.txt");
     solve(presents);
     solve2(presents);
     return 0;

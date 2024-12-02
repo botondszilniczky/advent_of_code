@@ -51,7 +51,20 @@ void solve2(std::string filename)
 
 int main(int argc, char const *argv[])
 {
-    solve("input.txt");
-    solve2("input.txt");
+    std::string exePath = argv[0];
+    std::string inputPath;
+    std::regex fileReg("(.*[\\/\\\\]).*$");
+    std::smatch match;
+    if(std::regex_search(exePath, match, fileReg))
+    {
+        for(auto m : match)
+        {
+            std::cout << m << std::endl;
+            inputPath = m;
+        }
+    }
+    std::string inputFilename = inputPath + "input05.txt";
+    solve(inputFilename);
+    solve2(inputFilename);
     return 0;
 }

@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <regex>
 
 
 std::string readFile(std::string filename)
@@ -61,7 +62,20 @@ void solve2(std::string data)
 
 int main(int argc, char const *argv[])
 {
-    std::string data = readFile("input.txt");
+    std::string exePath = argv[0];
+    std::string inputPath;
+    std::regex fileReg("(.*[\\/\\\\]).*$");
+    std::smatch match;
+    if(std::regex_search(exePath, match, fileReg))
+    {
+        for(auto m : match)
+        {
+            std::cout << m << std::endl;
+            inputPath = m;
+        }
+    }
+    std::string data = readFile(inputPath + "input01.txt");
+    
     solve(data);
     solve2(data);
     return 0;

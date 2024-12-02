@@ -34,3 +34,6 @@ solution
 
 # Python scripts
 *.py
+
+# Folders
+build/

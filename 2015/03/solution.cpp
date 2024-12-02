@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <map>
+#include <regex>
 
 std::string readFile(std::string filename)
 {
@@ -120,7 +121,19 @@ void solve2(std::string orders)
 
 int main(int argc, char const *argv[])
 {
-    std::string orders = readFile("input.txt");
+    std::string exePath = argv[0];
+    std::string inputPath;
+    std::regex fileReg("(.*[\\/\\\\]).*$");
+    std::smatch match;
+    if(std::regex_search(exePath, match, fileReg))
+    {
+        for(auto m : match)
+        {
+            std::cout << m << std::endl;
+            inputPath = m;
+        }
+    }
+    std::string orders = readFile(inputPath + "input03.txt");
     solve(orders);
     solve2(orders);
     return 0;
