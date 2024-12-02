@@ -1,5 +1,5 @@
-#ifndef FILEREADER
-#define FILEREADER
+#ifndef FILEREADER_HPP
+#define FILEREADER_HPP
 
 #include <list>
 #include <sstream>
@@ -20,4 +20,5 @@ public:
 
 
 
-#endif
+
+#endif // FILEREADER_HPP
