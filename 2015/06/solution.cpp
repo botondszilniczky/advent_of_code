@@ -12,7 +12,7 @@ enum Instruction
 
 struct data
 {
-    Instruction instruction;
+    Instruction instruction = Instruction::TURN_ON;
     size_t start_x, start_y, end_x, end_y;
 
     data(std::string instr, size_t s_x, size_t s_y, size_t e_x, size_t e_y)
@@ -86,7 +86,7 @@ int main(int argc, char const *argv[])
     std::string inputPath;
     std::regex fileReg("(.*[\\/\\\\]).*+$");
     std::smatch match;
-    if(std::regex_search(exePath, match, fileReg))
+    if (std::regex_search(exePath, match, fileReg))
     {
         if(match.size() < 2)
         {
