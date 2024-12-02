@@ -1,4 +1,4 @@
-#ifndef FILE_READER
+#ifndef FILEREADER
 #define FILEREADER
 
 #include <list>
