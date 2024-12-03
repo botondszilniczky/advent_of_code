@@ -8,9 +8,11 @@ add_custom_target(copy_resources_2024
 )
 
 
-set(executables "01;02")
+set(executables "01;02;03")
 
 foreach(exe ${executables})
     add_executable(2024_${exe} src/${exe}.cpp)
+    target_include_directories(2024_${exe} PUBLIC ${PROJECT_BINARY_DIR}/processing)
+    target_link_libraries(2024_${exe} PUBLIC InputProcessor FileReader)
     add_dependencies(2024_${exe} copy_resources_2024)
 endforeach()
