@@ -1,2 +1,2 @@
 # Advent of code
-Solution for advent of coed challenges.
+Solution for advent of code challenges.
