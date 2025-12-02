@@ -37,3 +37,7 @@ solution
 
 # Folders
 build/
+
+# Other
+.csv
+.log
