@@ -8,7 +8,7 @@ add_custom_target(copy_resources_2024
 )
 
 
-set(executables "01;02;03;04;05;06;07;08;09;10;11;12;13;14;15;16;a")
+set(executables "01;02;03;04;05;06;07;08;09;10;11;12;13;14;15;16")
 
 foreach(exe ${executables})
     add_executable(2024_${exe} src/${exe}.cpp)
