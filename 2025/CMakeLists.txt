@@ -18,7 +18,7 @@ add_custom_target(copy_resources_2025
     COMMENT "Copying resources into binary directory"
 )
 
-set(executables "01;02")
+set(executables "01;02;03;04")
 
 foreach(exe ${executables})
     add_executable(2025_${exe} src/${exe}.cpp)
